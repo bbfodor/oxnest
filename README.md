@@ -1,5 +1,7 @@
 # oxnest
 
+[![CI](https://github.com/bbfodor/oxnest/actions/workflows/ci.yml/badge.svg)](https://github.com/bbfodor/oxnest/actions/workflows/ci.yml)
+
 Opinionated [NestJS](https://nestjs.com/) starter for new backend projects. It features state-of-the-art tooling with type-aware linting out of the box.
 
 **Stack:**
@@ -49,6 +51,10 @@ Auto test file generation is disabled in `nest-cli.json`. This is a deliberate c
 ## Use as a template
 
 Clone this repo or use GitHub's **Use this template** feature as a starting point for your next project.
+
+## Contributing
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for development setup and general guidelines.
 
 ## License
 
