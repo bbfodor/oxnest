@@ -12,7 +12,7 @@
         "node": true,
         "vitest": true
     },
-    "ignorePatterns": ["dist", "node_modules", "coverage"],
+    "ignorePatterns": ["dist/**", "node_modules/**", "coverage/**", "scripts/**"],
     "rules": {
         "constructor-super": "error",
         "for-direction": "error",

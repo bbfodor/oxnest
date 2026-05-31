@@ -14,15 +14,13 @@ jobs:
     ci:
         runs-on: ubuntu-24.04-arm
         steps:
-            - uses: actions/checkout@v6
+            - uses: actions/checkout@v6.0.2
 
-            - uses: pnpm/action-setup@v6
-              with:
-                  version: 10.33
+            - uses: pnpm/action-setup@v6.0.8
 
-            - uses: actions/setup-node@v6
+            - uses: actions/setup-node@v6.4.0
               with:
-                  node-version: 24.16
+                  node-version-file: .node-version
                   cache: pnpm
 
             - run: pnpm install --frozen-lockfile
