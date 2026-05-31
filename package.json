@@ -34,7 +34,7 @@
         "@swc/cli": "^0.8.1",
         "@swc/core": "^1.15.40",
         "@types/express": "^5.0.0",
-        "@types/node": "^24.0.0",
+        "@types/node": "^25.9.1",
         "@types/supertest": "^7.0.0",
         "@vitest/coverage-v8": "^4.1.7",
         "oxfmt": "^0.52.0",
@@ -44,7 +44,7 @@
         "supertest": "^7.0.0",
         "ts-loader": "^9.5.2",
         "ts-node": "^10.9.2",
-        "typescript": "^5.7.3",
+        "typescript": "^6.0.3",
         "unplugin-swc": "^1.5.9",
         "vitest": "^4.1.7"
     },
