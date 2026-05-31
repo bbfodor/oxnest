@@ -2,7 +2,7 @@
 
 [![CI](https://github.com/bbfodor/oxnest/actions/workflows/ci.yml/badge.svg)](https://github.com/bbfodor/oxnest/actions/workflows/ci.yml)
 
-An opinionated [NestJS](https://nestjs.com/) starter for new backend projects. It features state-of-the-art tooling with type-aware linting out of the box.
+An opinionated [NestJS](https://nestjs.com/) starter template for new backend projects. It features state-of-the-art tooling with type-aware linting out of the box.
 
 **Stack:**
 
