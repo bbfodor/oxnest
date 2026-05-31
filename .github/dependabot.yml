@@ -7,21 +7,31 @@ updates:
       schedule:
           interval: 'weekly'
           day: 'sunday'
+          time: '09:00'
+      cooldown:
+          default-days: 7
       groups:
           production-dependencies:
-              dependency-type: production
+              dependency-type: 'production'
               patterns:
                   - '*'
           development-dependencies:
-              dependency-type: development
+              dependency-type: 'development'
               patterns:
                   - '*'
+      ignore:
+          - dependency-name: '@types/node'
+            update-types:
+                - 'version-update:semver-major'
 
     - package-ecosystem: 'github-actions'
       directory: '/'
       schedule:
           interval: 'weekly'
           day: 'sunday'
+          time: '09:00'
+      cooldown:
+          default-days: 7
       groups:
           github-actions:
               patterns:

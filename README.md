@@ -2,7 +2,7 @@
 
 [![CI](https://github.com/bbfodor/oxnest/actions/workflows/ci.yml/badge.svg)](https://github.com/bbfodor/oxnest/actions/workflows/ci.yml)
 
-Opinionated [NestJS](https://nestjs.com/) starter for new backend projects. It features state-of-the-art tooling with type-aware linting out of the box.
+An opinionated [NestJS](https://nestjs.com/) starter for new backend projects. It features state-of-the-art tooling with type-aware linting out of the box.
 
 **Stack:**
 
@@ -12,8 +12,8 @@ Opinionated [NestJS](https://nestjs.com/) starter for new backend projects. It f
 
 ## Prerequisites
 
-- [Node](https://nodejs.org/)
-- [pnpm](https://pnpm.io/)
+- [Node](https://nodejs.org/) -- see [`.node-version`](.node-version)
+- [pnpm](https://pnpm.io/) -- see `packageManager` in [`package.json`](package.json)
 
 ## Quick start
 
