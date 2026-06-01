@@ -68,8 +68,20 @@ Dependabot opens weekly batched PRs for dependency upgrades, but a version must 
 
 If you need to bump the Node version then do it together with `@types/node` manually, and write the new version to [`.node-version`](.node-version) and [`.nvmrc`](.nvmrc). Keep that package on the same major version as Node itself. Prefer the LTS versions that are at least a week old when bumping these and pnpm.
 
+## Branches
+
+| Branch    | Purpose                                                                 |
+| --------- | ----------------------------------------------------------------------- |
+| `develop` | Day-to-day integration. **Open all pull requests against this branch.** |
+| `main`    | Stable branch. Maintainers merge here when pushing a new release.       |
+
+### Releases
+
+When `develop` has meaningful changes, maintainers merge `develop` into `main` via a `release/*` branch, and publish a [GitHub release](https://github.com/bbfodor/oxnest/releases). Contributors do not need to target `main` directly.
+
 ## Pull requests
 
+- **Base your PR on `develop`**, not `main`.
 - Keep changes focused. Prefer small, reviewable PRs.
 - Update the README when there are relevant changes.
 - Describe what changed and why in the PR body.
