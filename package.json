@@ -1,6 +1,6 @@
 {
     "name": "oxnest",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "description": "An opinionated NestJS starter template with state-of-the-art tooling — pnpm, SWC, Vitest, and Oxc.",
     "license": "MIT",
     "author": "bbfodor",
