@@ -6,7 +6,7 @@ Thanks for helping improve this template. Issues and pull requests are welcome.
 
 Use the same tool versions as the [CI](.github/workflows/ci.yml):
 
-- **Node** -- [`.node-version`](.node-version)
+- **Node** -- [`.node-version`](.node-version) and [`.nvmrc`](.nvmrc) (keep in sync)
 - **pnpm** -- `packageManager` in [`package.json`](package.json)
 
 Install dependencies:
@@ -66,7 +66,7 @@ Together, they give us some time to spot potentially bad releases before they la
 
 Dependabot opens weekly batched PRs for dependency upgrades, but a version must be at least a week old before pulling it in. The `@types/node` package's major upgrades are ignored by these batches.
 
-If you need to bump the Node version then do it together with `@types/node` manually, and write the new Node version to the [`.node-version`](.node-version) file. Keep this package on the same major version as Node itself. Prefer the LTS versions that are at least a week old when bumping these and pnpm.
+If you need to bump the Node version then do it together with `@types/node` manually, and write the new version to [`.node-version`](.node-version) and [`.nvmrc`](.nvmrc). Keep that package on the same major version as Node itself. Prefer the LTS versions that are at least a week old when bumping these and pnpm.
 
 ## Pull requests
 
