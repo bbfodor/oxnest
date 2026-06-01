@@ -38,7 +38,7 @@ pnpm run fmt
 
 Define import aliases in [`tsconfig.json`](tsconfig.json) `compilerOptions.paths` only.
 
-[`.swcrc`](.swcrc) is generated from this config by the `prepare` script on install. Do not edit or commit it. If you need to change the config, run `pnpm run prepare` to regenerate it.
+The SWC config file (`.swcrc`) is generated from that config. Do not edit or commit it. The `prepare` lifecycle hook runs [`scripts/gen-swcrc.mjs`](scripts/gen-swcrc.mjs) on install to write this file. To change this config, edit `tsconfig.json` or the generator script, then run the `prepare` package script to regenerate `.swcrc`.
 
 ## Tests
 
@@ -66,7 +66,7 @@ Together, they give us some time to spot potentially bad releases before they la
 
 Dependabot opens weekly batched PRs for dependency upgrades, but a version must be at least a week old before pulling it in. The `@types/node` package's major upgrades are ignored by these batches.
 
-If you need to bump the Node version then do it together with `@types/node` manually, and write the new Node version to the [`.node-version`](.node-version) file. Keep this package on the same major version as Node itself. Prefer the LTS versions when bumping these.
+If you need to bump the Node version then do it together with `@types/node` manually, and write the new Node version to the [`.node-version`](.node-version) file. Keep this package on the same major version as Node itself. Prefer the LTS versions that are at least a week old when bumping these and pnpm.
 
 ## Pull requests
 
