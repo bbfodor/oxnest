@@ -77,7 +77,7 @@ If you need to bump the Node version then do it together with `@types/node` manu
 
 ### Releases
 
-When `develop` has meaningful changes, maintainers merge `develop` into `main` via a `release/*` branch, and publish a [GitHub release](https://github.com/bbfodor/oxnest/releases). Contributors do not need to target `main` directly.
+When `develop` has meaningful changes, maintainers merge `develop` into `main` via a `release/*` branch with a version bump, publish a [GitHub release](https://github.com/bbfodor/oxnest/releases), then backport the changes to `develop`. Contributors do not need to target `main` directly.
 
 ## Pull requests
 
