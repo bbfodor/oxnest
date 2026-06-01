@@ -1,9 +1,17 @@
 import { readFileSync, writeFileSync } from 'node:fs';
-import { dirname, join } from 'node:path';
+import { dirname, join, relative } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
-const tsconfig = JSON.parse(readFileSync(join(root, 'tsconfig.json'), 'utf8'));
+const rel = (path) => relative(root, path).replace(/\\/g, '/');
+
+const scriptRel = rel(fileURLToPath(import.meta.url));
+const tsconfigPath = join(root, 'tsconfig.json');
+const tsconfigRel = rel(tsconfigPath);
+const swcrcPath = join(root, '.swcrc');
+const swcrcRel = rel(swcrcPath);
+
+const tsconfig = JSON.parse(readFileSync(tsconfigPath, 'utf8'));
 const paths = tsconfig.compilerOptions?.paths ?? {};
 const target = tsconfig.compilerOptions?.target?.toLowerCase();
 
@@ -23,4 +31,10 @@ const swcrc = {
     },
 };
 
-writeFileSync(join(root, '.swcrc'), `${JSON.stringify(swcrc, null, 4)}\n`);
+writeFileSync(swcrcPath, `${JSON.stringify(swcrc, null, 4)}\n`);
+
+console.log(
+    `> Wrote ${swcrcRel} (generated).
+> To change the SWC config, edit ${tsconfigRel} or ${scriptRel}.
+> Run the \`prepare\` package script again to regenerate this file.`,
+);
