@@ -15,6 +15,15 @@ An opinionated [NestJS](https://nestjs.com/) starter template for new backend pr
 - [Node](https://nodejs.org/) -- see [`.node-version`](.node-version)
 - [pnpm](https://pnpm.io/) -- see `packageManager` in [`package.json`](package.json)
 
+Use the [Oxc](https://marketplace.cursorapi.com/items/?itemName=oxc.oxc-vscode) extension in VS Code (or forks) to enable linting and format-on-save in your IDE (can be customized in [`settings.json`](.vscode/settings.json)). You may need to point the extension to your Node binary when using a version manager (eg. fnm, nvm) like so:
+
+```jsonc
+// User Settings JSON
+{
+    "oxc.path.node": "<path_to_your_node_bin>",
+}
+```
+
 ## Quick start
 
 ```bash
