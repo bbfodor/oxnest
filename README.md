@@ -6,9 +6,11 @@ A lightweight [NestJS](https://nestjs.com/) starter template powered by the Oxid
 
 **Stack:**
 
-- [SWC](https://swc.rs/) -- A fast current-generation compiler written in Rust.
-- [Oxc](https://oxc.rs/) -- Type-aware linting (`oxlint`) and quick formatting (`oxfmt`).
-- [Vitest](https://vitest.dev/) -- Integrated testing framework.
+- [Oxc](https://oxc.rs/) -- Transpilation (`oxc-transform`), type-aware linting (`oxlint`), and quick formatting (`oxfmt`).
+- [Vitest](https://vitest.dev/) -- A fast current-generation testing framework utilizing the Oxc transformer.
+
+> [!NOTE]
+> The template uses SWC in the build pipeline for now, as the Nest CLI does not provide a native Oxc builder currently.
 
 ## Prerequisites
 
