@@ -2,13 +2,15 @@
 
 [![CI](https://github.com/bbfodor/oxnest/actions/workflows/ci.yml/badge.svg)](https://github.com/bbfodor/oxnest/actions/workflows/ci.yml)
 
-An opinionated [NestJS](https://nestjs.com/) starter template for new backend projects. It features state-of-the-art tooling with zero boilerplate. Preconfigured and ready to use.
+A lightweight [NestJS](https://nestjs.com/) starter template powered by the Oxidation Compiler. It features a modern, high-performance toolchain built around Rust. Everything comes preconfigured out of the box, so you can start building right away.
 
 **Stack:**
 
-- [SWC](https://swc.rs/) -- A fast current-generation compiler written in Rust.
-- [Vitest](https://vitest.dev/) -- A modern testing framework with great performance out of the box.
-- [Oxc](https://oxc.rs/) -- Type-aware linting (`oxlint`) and quick formatting (`oxfmt`).
+- [Oxc](https://oxc.rs/) -- Transpilation (`oxc-transform`), type-aware linting (`oxlint`), and quick formatting (`oxfmt`).
+- [Vitest](https://vitest.dev/) -- A fast current-generation testing framework utilizing the Oxc transformer.
+
+> [!NOTE]
+> The template uses SWC in the build pipeline for now, as the Nest CLI does not provide a native Oxc builder currently.
 
 ## Prerequisites
 

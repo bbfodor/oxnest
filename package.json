@@ -1,9 +1,8 @@
 {
     "name": "oxnest",
-    "version": "0.1.1",
-    "description": "An opinionated NestJS starter template with state-of-the-art tooling — pnpm, SWC, Vitest, and Oxc.",
+    "version": "0.2.0",
+    "description": "A lightweight NestJS starter template powered by the Oxidation Compiler.",
     "license": "MIT",
-    "author": "bbfodor",
     "scripts": {
         "prepare": "node scripts/gen-swcrc.mjs",
         "build": "nest build",
@@ -22,16 +21,16 @@
         "test:e2e": "vitest run --project e2e"
     },
     "dependencies": {
-        "@nestjs/common": "^11.0.1",
-        "@nestjs/core": "^11.0.1",
-        "@nestjs/platform-express": "^11.0.1",
+        "@nestjs/common": "^11.1.24",
+        "@nestjs/core": "^11.1.24",
+        "@nestjs/platform-express": "^11.1.24",
         "reflect-metadata": "^0.2.2",
         "rxjs": "^7.8.2"
     },
     "devDependencies": {
         "@nestjs/cli": "^11.0.21",
         "@nestjs/schematics": "^11.1.0",
-        "@nestjs/testing": "^11.0.1",
+        "@nestjs/testing": "^11.1.24",
         "@swc/cli": "^0.8.1",
         "@swc/core": "^1.15.40",
         "@types/express": "^5.0.6",
@@ -46,7 +45,6 @@
         "ts-loader": "^9.5.7",
         "ts-node": "^10.9.2",
         "typescript": "^6.0.3",
-        "unplugin-swc": "^1.5.9",
         "vitest": "^4.1.7"
     },
     "packageManager": "pnpm@11.2.2"
