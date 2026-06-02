@@ -1,9 +1,8 @@
 {
     "name": "oxnest",
     "version": "0.1.1",
-    "description": "An opinionated NestJS starter template with state-of-the-art tooling — pnpm, SWC, Vitest, and Oxc.",
+    "description": "A lightweight NestJS starter template powered by the Oxidation Compiler.",
     "license": "MIT",
-    "author": "bbfodor",
     "scripts": {
         "prepare": "node scripts/gen-swcrc.mjs",
         "build": "nest build",
