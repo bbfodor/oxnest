@@ -1,6 +1,6 @@
 {
     "name": "oxnest",
-    "version": "0.1.1",
+    "version": "0.2.0",
     "description": "A lightweight NestJS starter template powered by the Oxidation Compiler.",
     "license": "MIT",
     "scripts": {
