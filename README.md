@@ -1,16 +1,27 @@
-# oxnest
+# Oxnest
 
 [![CI](https://github.com/bbfodor/oxnest/actions/workflows/ci.yml/badge.svg)](https://github.com/bbfodor/oxnest/actions/workflows/ci.yml)
+[![status: experimental](https://img.shields.io/badge/status-experimental-orange)](#oxnest)
+[![Powered by Oxc](https://img.shields.io/badge/powered%20by-Oxc-7c3aed)](https://oxc.rs/)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
-A lightweight [NestJS](https://nestjs.com/) starter template powered by the Oxidation Compiler. It features a modern, high-performance toolchain built around Rust. Everything comes preconfigured out of the box, so you can start building right away.
+A lightweight [NestJS](https://nestjs.com/) starter template powered by the [Oxidation Compiler](https://oxc.rs/). It features a modern, high-performance toolchain built around Rust. Everything comes preconfigured out of the box, so you can start building right away.
 
-**Stack:**
+## Why?
 
-- [Oxc](https://oxc.rs/) -- Transpilation (`oxc-transform`), type-aware linting (`oxlint`), and quick formatting (`oxfmt`).
-- [Vitest](https://vitest.dev/) -- A fast current-generation testing framework utilizing the Oxc transformer.
+The Nest CLI produces new projects with a slow and outdated toolchain by default. **Oxnest** swaps that chain for state-of-the-art tooling based on Rust:
+
+|            | Default Nest starter | Oxnest                               |
+| ---------- | -------------------- | ------------------------------------ |
+| Linting    | ESLint + plugins     | oxlint                               |
+| Formatting | Prettier             | oxfmt                                |
+| Testing    | Jest                 | [Vitest](https://vitest.dev/) (+Oxc) |
+| Transform  | tsc                  | Oxc / [SWC](https://swc.rs/)         |
+
+**The result:** near-instant lint & format feedback with dramatically quicker test runs, all driven by a fast current-generation compiler core. It is absolutely plug-and-play with zero setup on your part.
 
 > [!NOTE]
-> The template uses SWC in the build pipeline for now, as the Nest CLI does not provide a native Oxc builder currently.
+> This template is in early development and uses SWC in the build pipeline for now, as the Nest CLI does not provide a native Oxc builder currently.
 
 ## Prerequisites
 
