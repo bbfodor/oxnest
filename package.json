@@ -21,9 +21,9 @@
         "test:e2e": "vitest run --project e2e"
     },
     "dependencies": {
-        "@nestjs/common": "^11.1.26",
-        "@nestjs/core": "^11.1.26",
-        "@nestjs/platform-express": "^11.1.26",
+        "@nestjs/common": "^11.1.27",
+        "@nestjs/core": "^11.1.27",
+        "@nestjs/platform-express": "^11.1.27",
         "reflect-metadata": "^0.2.2",
         "rxjs": "^7.8.2"
     },
