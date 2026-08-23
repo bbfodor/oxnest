@@ -8,6 +8,8 @@ updates:
       schedule:
           interval: 'monthly'
           time: '09:00'
+      assignees:
+          - 'bbfodor'
       cooldown:
           default-days: 7
       groups:
@@ -23,6 +25,9 @@ updates:
           - dependency-name: '@types/node'
             update-types:
                 - 'version-update:semver-major'
+          - dependency-name: 'typescript'
+            update-types:
+                - 'version-update:semver-major'
 
     - package-ecosystem: 'github-actions'
       directory: '/'
@@ -30,6 +35,8 @@ updates:
       schedule:
           interval: 'monthly'
           time: '09:00'
+      assignees:
+          - 'bbfodor'
       cooldown:
           default-days: 7
       groups:
