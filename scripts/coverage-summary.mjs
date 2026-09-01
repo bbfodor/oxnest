@@ -9,7 +9,7 @@ const pct = (metric) => (metric.total === 0 ? '--' : `${metric.pct}%`);
 const bar = (metric) => {
   if (metric.total === 0) return '';
   const filled = Math.round(metric.pct / 10);
-  return `${'█'.repeat(filled)}${'░'.repeat(10 - filled)}`;
+  return `${'■'.repeat(filled)}${'□'.repeat(10 - filled)}`;
 };
 
 const { total, ...files } = summary;

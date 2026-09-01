@@ -59,8 +59,11 @@ jobs:
       - name: Build and type check
         run: pnpm run build
 
-      - name: Test
-        run: pnpm run test:cov
+      - name: Test (unit)
+        run: |
+          pnpm run test:cov || code=$?
+          node scripts/rename-test-report.mjs 'Unit tests'
+          exit "${code:-0}"
 
       - name: Coverage summary
         run: node scripts/coverage-summary.mjs
@@ -74,4 +77,7 @@ jobs:
           retention-days: 14
 
       - name: Test (e2e)
-        run: pnpm run test:e2e
+        run: |
+          pnpm run test:e2e || code=$?
+          node scripts/rename-test-report.mjs 'E2E tests'
+          exit "${code:-0}"
