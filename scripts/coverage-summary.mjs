@@ -1,12 +1,19 @@
 import { appendFileSync, readFileSync } from 'node:fs';
 import { relative } from 'node:path';
 
+const BAR_WIDTH = 10;
+const BAR_FILL = '█';
+const BAR_TRACK = '\u00a0';
+
 const METRICS = ['statements', 'branches', 'functions', 'lines'];
 
 const summary = JSON.parse(readFileSync('coverage/coverage-summary.json', 'utf8'));
 const title = (value) => value[0].toUpperCase() + value.slice(1);
 const pct = (metric) => (metric.total === 0 ? '--' : `${metric.pct}%`);
-const bar = (metric) => (metric.total === 0 ? '' : '█'.repeat(Math.round(metric.pct / 10)));
+const bar = (metric) => {
+  const filled = metric.total === 0 ? 0 : Math.round((metric.pct / 100) * BAR_WIDTH);
+  return `${BAR_FILL.repeat(filled)}${BAR_TRACK.repeat(BAR_WIDTH - filled)}`;
+};
 
 const { total, ...files } = summary;
 
