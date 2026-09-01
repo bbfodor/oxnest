@@ -2,44 +2,44 @@
 
 version: 2
 updates:
-    - package-ecosystem: 'npm'
-      directory: '/'
-      target-branch: 'develop'
-      schedule:
-          interval: 'monthly'
-          time: '09:00'
-      assignees:
-          - 'bbfodor'
-      cooldown:
-          default-days: 7
-      groups:
-          production-dependencies:
-              dependency-type: 'production'
-              patterns:
-                  - '*'
-          development-dependencies:
-              dependency-type: 'development'
-              patterns:
-                  - '*'
-      ignore:
-          - dependency-name: '@types/node'
-            update-types:
-                - 'version-update:semver-major'
-          - dependency-name: 'typescript'
-            update-types:
-                - 'version-update:semver-major'
+  - package-ecosystem: 'npm'
+    directory: '/'
+    target-branch: 'develop'
+    schedule:
+      interval: 'monthly'
+      time: '09:00'
+    assignees:
+      - 'bbfodor'
+    cooldown:
+      default-days: 7
+    groups:
+      production-dependencies:
+        dependency-type: 'production'
+        patterns:
+          - '*'
+      development-dependencies:
+        dependency-type: 'development'
+        patterns:
+          - '*'
+    ignore:
+      - dependency-name: '@types/node'
+        update-types:
+          - 'version-update:semver-major'
+      - dependency-name: 'typescript'
+        update-types:
+          - 'version-update:semver-major'
 
-    - package-ecosystem: 'github-actions'
-      directory: '/'
-      target-branch: 'develop'
-      schedule:
-          interval: 'monthly'
-          time: '09:00'
-      assignees:
-          - 'bbfodor'
-      cooldown:
-          default-days: 7
-      groups:
-          github-actions:
-              patterns:
-                  - '*'
+  - package-ecosystem: 'github-actions'
+    directory: '/'
+    target-branch: 'develop'
+    schedule:
+      interval: 'monthly'
+      time: '09:00'
+    assignees:
+      - 'bbfodor'
+    cooldown:
+      default-days: 7
+    groups:
+      github-actions:
+        patterns:
+          - '*'

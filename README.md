@@ -33,7 +33,7 @@ Use the [Oxc](https://marketplace.cursorapi.com/items/?itemName=oxc.oxc-vscode) 
 ```jsonc
 // User Settings JSON
 {
-    "oxc.path.node": "<path_to_your_node_bin>",
+  "oxc.path.node": "<path_to_your_node_bin>",
 }
 ```
 
@@ -82,7 +82,7 @@ Clone this repo or use GitHub's **Use this template** feature as a starting poin
 
 ## Dependabot & dependency updates
 
-Routine dependency updates are batched weekly with a **7-day delay**, so newly published versions have time to surface issues before they land here. Security fixes are not delayed. See [CONTRIBUTING.md - Dependency updates](CONTRIBUTING.md#dependency-updates) for how this works with pnpm.
+Routine dependency updates are batched with a **7-day delay**, so newly published versions have time to surface issues before they land here. See [CONTRIBUTING.md - Dependency updates](CONTRIBUTING.md#dependency-updates) for how this works with pnpm.
 
 ## Contributing
 

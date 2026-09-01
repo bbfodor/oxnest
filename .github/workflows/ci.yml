@@ -1,32 +1,68 @@
 name: CI
 
 on:
-    push:
-        branches: [develop, main]
-    pull_request:
-        branches: [develop, main]
+  push:
+    branches: [develop, main]
+  pull_request:
+    branches: [develop, main]
 
 concurrency:
-    group: ${{ github.workflow }}-${{ github.ref }}
-    cancel-in-progress: true
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
 
 jobs:
-    ci:
-        runs-on: ubuntu-24.04-arm
-        steps:
-            - uses: actions/checkout@v7.0.1
+  ci:
+    runs-on: ubuntu-24.04-arm
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7.0.1
 
-            - uses: pnpm/action-setup@v6.0.10
+      - uses: pnpm/action-setup@v6.0.10
 
-            - uses: actions/setup-node@v7.0.0
-              with:
-                  node-version-file: .node-version
-                  cache: pnpm
+      - uses: actions/setup-node@v7.0.0
+        with:
+          node-version-file: .node-version
+          cache: pnpm
 
-            - run: pnpm install --frozen-lockfile
+      - run: pnpm install --frozen-lockfile
 
-            - run: pnpm run lint:check
-            - run: pnpm run fmt:check
-            - run: pnpm run build
-            - run: pnpm run test
-            - run: pnpm run test:e2e
+      - name: Audit dependencies
+        run: |
+          if ! pnpm run deps:audit:high; then
+            echo '::warning title=Vulnerable dependencies::found high and/or critical severity vulnerabilities, run `pnpm run deps:audit:fix` or update the affected packages.'
+          fi
+
+      - name: Check for duplicate dependencies
+        run: |
+          if ! pnpm run deps:dedupe:check; then
+            echo '::warning title=Duplicated dependencies::found duplicated dependencies, run `pnpm run deps:dedupe`.'
+          fi
+
+      - name: Lint
+        run: pnpm run lint
+
+      - name: Format
+        run: |
+          if ! pnpm run fmt:check; then
+            echo '::warning title=Formatting::found unformatted files, run `pnpm run fmt`.'
+          fi
+
+      - name: Build and type check
+        run: pnpm run build
+
+      - name: Test
+        run: pnpm run test:cov
+
+      - name: Upload coverage
+        uses: actions/upload-artifact@v7.0.1
+        with:
+          name: coverage
+          path: coverage/
+          if-no-files-found: error
+          retention-days: 14
+
+      - name: Test (e2e)
+        run: pnpm run test:e2e
