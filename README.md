@@ -14,9 +14,10 @@ The Nest CLI produces new projects with a slow and outdated toolchain by default
 |            | Default Nest starter | Oxnest                               |
 | ---------- | -------------------- | ------------------------------------ |
 | Linting    | ESLint + plugins     | oxlint                               |
+| Type check | tsc                  | oxlint (tsgolint)                    |
+| Transform  | tsc                  | Oxc / [SWC](https://swc.rs/)         |
 | Formatting | Prettier             | oxfmt                                |
 | Testing    | Jest                 | [Vitest](https://vitest.dev/) (+Oxc) |
-| Transform  | tsc                  | Oxc / [SWC](https://swc.rs/)         |
 
 **The result:** near-instant lint & format feedback with dramatically quicker test runs, all driven by a fast current-generation compiler core. It is absolutely plug-and-play with zero setup on your part.
 
@@ -28,7 +29,7 @@ The Nest CLI produces new projects with a slow and outdated toolchain by default
 - [Node](https://nodejs.org/) -- Use version from the [.node-version](.node-version) file (or [.nvmrc](.nvmrc) for nvm)
 - [pnpm](https://pnpm.io/) -- Use version from the `packageManager` property in [package.json](package.json)
 
-Use the [Oxc](https://marketplace.cursorapi.com/items/?itemName=oxc.oxc-vscode) extension in VS Code (or forks) to enable linting and format-on-save in your IDE (can be customized in [settings.json](.vscode/settings.json)). You may need to point the extension to your Node binary when using a version manager (eg. fnm, nvm) like so:
+Use the [Oxc](https://marketplace.cursorapi.com/items/?itemName=oxc.oxc-vscode) extension in VS Code (or forks) to enable linting and format-on-save in your IDE (can be customized in [settings.json](.vscode/settings.json)). The extension reports type-aware lint rules as well, while type errors themselves keep coming from the editor's TypeScript language server. You may need to point the extension to your Node binary when using a version manager (eg. fnm, nvm) like so:
 
 ```jsonc
 // User Settings JSON
@@ -48,13 +49,14 @@ The app listens on port `3000` by default (override via the `PORT` env variable)
 
 ## Main scripts
 
-| Script     | Description           |
-| ---------- | --------------------- |
-| `start`    | Start the Nest server |
-| `test`     | Run all unit tests    |
-| `test:e2e` | Run all E2E tests     |
-| `lint`     | Lint the codebase     |
-| `fmt`      | Format the codebase   |
+| Script           | Description                         |
+| ---------------- | ----------------------------------- |
+| `start`          | Start the Nest server               |
+| `test`           | Run all unit tests                  |
+| `test:e2e`       | Run all E2E tests                   |
+| `lint`           | Lint the codebase                   |
+| `lint:typecheck` | Lint the codebase and type check it |
+| `fmt`            | Format the codebase                 |
 
 ## Project layout
 

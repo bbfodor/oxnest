@@ -7,7 +7,7 @@ pre-commit:
       glob: '*'
       run: pnpm exec oxfmt --check --no-error-on-unmatched-pattern {staged_files}
 
-    - name: lint
+    - name: lint:typecheck
       run: pnpm run lint:typecheck
 
     - name: test

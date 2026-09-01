@@ -47,16 +47,16 @@ jobs:
             echo '::warning title=Unmet peer dependencies::found unmet or missing peers, run `pnpm run deps:peers` for the list.'
           fi
 
-      - name: Lint check
-        run: pnpm run lint
-
       - name: Format check
         run: |
           if ! pnpm run fmt:check; then
             echo '::warning title=Formatting::found unformatted files, run `pnpm run fmt`.'
           fi
 
-      - name: Build and type check
+      - name: Lint and type check
+        run: pnpm run lint:typecheck
+
+      - name: Build
         run: pnpm run build
 
       - name: Test (unit)
