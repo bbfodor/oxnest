@@ -48,13 +48,13 @@ The app listens on port `3000` by default (override via the `PORT` env variable)
 
 ## Main scripts
 
-| Script     | Description                   |
-| ---------- | ----------------------------- |
-| `start`    | Start the Nest server         |
-| `test`     | Run all unit tests            |
-| `test:e2e` | Run all E2E tests             |
-| `lint`     | Perform linting with auto-fix |
-| `fmt`      | Format the codebase           |
+| Script     | Description           |
+| ---------- | --------------------- |
+| `start`    | Start the Nest server |
+| `test`     | Run all unit tests    |
+| `test:e2e` | Run all E2E tests     |
+| `lint`     | Lint the codebase     |
+| `fmt`      | Format the codebase   |
 
 ## Project layout
 

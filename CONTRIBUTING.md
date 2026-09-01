@@ -15,6 +15,8 @@ Install dependencies:
 pnpm install
 ```
 
+This also installs a [lefthook](https://lefthook.dev/) pre-commit hook ([`lefthook.yml`](lefthook.yml)) that checks formatting, lints with type checking, and runs the tests related to your staged files. Nothing is rewritten or re-staged; fix issues yourself and commit again. Skip a run with `LEFTHOOK=0 git commit`.
+
 ## Before opening a pull request
 
 Run these sanity checks:
