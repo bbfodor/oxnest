@@ -29,7 +29,7 @@ jobs:
 
       - run: pnpm install --frozen-lockfile
 
-      - name: Dependencies audit
+      - name: Audit dependencies
         run: |
           if ! pnpm run deps:audit:high; then
             echo '::warning title=Vulnerable dependencies::found high and/or critical severity vulnerabilities, run `pnpm run deps:audit:fix` or update the affected packages.'
