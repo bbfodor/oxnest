@@ -16,25 +16,25 @@ const paths = tsconfig.compilerOptions?.paths ?? {};
 const target = tsconfig.compilerOptions?.target?.toLowerCase();
 
 const swcPaths = Object.fromEntries(
-    Object.entries(paths).map(([key, targets]) => [
-        key,
-        targets.map((entry) => entry.replace(/^\.\//, '')),
-    ]),
+  Object.entries(paths).map(([key, targets]) => [
+    key,
+    targets.map((entry) => entry.replace(/^\.\//, '')),
+  ]),
 );
 
 const swcrc = {
-    $schema: 'https://swc.rs/schema.json',
-    jsc: {
-        target,
-        baseUrl: './',
-        ...(Object.keys(swcPaths).length > 0 && { paths: swcPaths }),
-    },
+  $schema: 'https://swc.rs/schema.json',
+  jsc: {
+    target,
+    baseUrl: './',
+    ...(Object.keys(swcPaths).length > 0 && { paths: swcPaths }),
+  },
 };
 
-writeFileSync(swcrcPath, `${JSON.stringify(swcrc, null, 4)}\n`);
+writeFileSync(swcrcPath, `${JSON.stringify(swcrc, null, 2)}\n`);
 
 console.log(
-    `> Wrote ${swcrcRel} (generated).
+  `> Wrote ${swcrcRel} (generated).
 > To change the SWC config, edit ${tsconfigRel} or ${scriptRel}.
 > Run the \`prepare\` package script again to regenerate this file.`,
 );

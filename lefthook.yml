@@ -1,0 +1,22 @@
+# https://lefthook.dev/configuration/
+
+pre-commit:
+  parallel: true
+  jobs:
+    - name: fmt
+      glob: '*'
+      run: pnpm exec oxfmt --check --no-error-on-unmatched-pattern {staged_files}
+
+    - name: lint
+      run: pnpm run lint:typecheck
+
+    - name: test
+      glob: '**/*.ts'
+      run: pnpm exec vitest related --run {staged_files}
+
+    - name: deps
+      glob: 'pnpm-lock.yaml'
+      run: |
+        pnpm run deps:audit:high || echo 'WARNING: found high and/or critical severity vulnerabilities'
+        pnpm run deps:dedupe:check || echo 'WARNING: found duplicate dependencies'
+        pnpm run deps:peers || echo 'WARNING: found unmet peer dependencies'

@@ -15,22 +15,23 @@ Install dependencies:
 pnpm install
 ```
 
+This also installs a [lefthook](https://lefthook.dev/) pre-commit hook ([`lefthook.yml`](lefthook.yml)) that checks formatting, lints with type checking, and runs the tests related to your staged files. Nothing is rewritten or re-staged; fix issues yourself and commit again. Skip a run with `LEFTHOOK=0 git commit`.
+
 ## Before opening a pull request
 
 Run these sanity checks:
 
 ```bash
-pnpm run lint:check
+pnpm run lint
 pnpm run fmt:check
 pnpm run build
 pnpm run test
 pnpm run test:e2e
 ```
 
-Fix linter and formatting issues:
+Fix formatting issues:
 
 ```bash
-pnpm run lint
 pnpm run fmt
 ```
 
@@ -56,15 +57,13 @@ Compromised npm packages are often discovered and yanked within days of a malici
 This template uses a **7-day delay** on routine version updates to reduce that exposure:
 
 1. **Dependabot** waits before opening update PRs ([`.github/dependabot.yml`](.github/dependabot.yml)).
-2. **pnpm** refuses to install releases younger than 7 days ([`pnpm-workspace.yaml`](pnpm-workspace.yaml)).
+2. **pnpm** skips releases younger than 7 days when resolving new versions ([`pnpm-workspace.yaml`](pnpm-workspace.yaml)).
 
 Together, they give us some time to spot potentially bad releases before they land in here. This is not a guarantee though, but a deliberate tradeoff where we exchange slightly older dependencies for some stability.
 
-**Security updates are not delayed.** Dependabot still opens PRs for known vulnerabilities as soon as a fix is available, and pnpm’s cooldown does not apply to those.
-
 ### How it works
 
-Dependabot opens weekly batched PRs for dependency upgrades, but a version must be at least a week old before pulling it in. The `@types/node` package's major upgrades are ignored by these batches.
+Dependabot opens batched PRs for dependency upgrades, but a version must be at least a week old before pulling it in. The `@types/node` package's major upgrades are ignored by these batches.
 
 If you need to bump the Node version then do it together with `@types/node` manually, and write the new version to [`.node-version`](.node-version) and [`.nvmrc`](.nvmrc). Keep that package on the same major version as Node itself. Prefer the LTS versions that are at least a week old when bumping these and pnpm.
 

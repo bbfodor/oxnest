@@ -1,9 +1,10 @@
 packages:
-    - '.'
+  - '.'
 
 allowBuilds:
-    '@nestjs/core': true
-    '@swc/core': true
+  '@nestjs/core': true
+  '@swc/core': true
+  lefthook: true
 
 # 7 days in minutes (7 × 24 × 60)
 minimumReleaseAge: 10080

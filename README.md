@@ -33,7 +33,7 @@ Use the [Oxc](https://marketplace.cursorapi.com/items/?itemName=oxc.oxc-vscode) 
 ```jsonc
 // User Settings JSON
 {
-    "oxc.path.node": "<path_to_your_node_bin>",
+  "oxc.path.node": "<path_to_your_node_bin>",
 }
 ```
 
@@ -48,13 +48,13 @@ The app listens on port `3000` by default (override via the `PORT` env variable)
 
 ## Main scripts
 
-| Script     | Description                   |
-| ---------- | ----------------------------- |
-| `start`    | Start the Nest server         |
-| `test`     | Run all unit tests            |
-| `test:e2e` | Run all E2E tests             |
-| `lint`     | Perform linting with auto-fix |
-| `fmt`      | Format the codebase           |
+| Script     | Description           |
+| ---------- | --------------------- |
+| `start`    | Start the Nest server |
+| `test`     | Run all unit tests    |
+| `test:e2e` | Run all E2E tests     |
+| `lint`     | Lint the codebase     |
+| `fmt`      | Format the codebase   |
 
 ## Project layout
 
@@ -82,7 +82,7 @@ Clone this repo or use GitHub's **Use this template** feature as a starting poin
 
 ## Dependabot & dependency updates
 
-Routine dependency updates are batched weekly with a **7-day delay**, so newly published versions have time to surface issues before they land here. Security fixes are not delayed. See [CONTRIBUTING.md - Dependency updates](CONTRIBUTING.md#dependency-updates) for how this works with pnpm.
+Routine dependency updates are batched with a **7-day delay**, so newly published versions have time to surface issues before they land here. See [CONTRIBUTING.md - Dependency updates](CONTRIBUTING.md#dependency-updates) for how this works with pnpm.
 
 ## Contributing
 
