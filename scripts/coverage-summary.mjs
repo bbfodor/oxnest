@@ -6,11 +6,7 @@ const METRICS = ['statements', 'branches', 'functions', 'lines'];
 const summary = JSON.parse(readFileSync('coverage/coverage-summary.json', 'utf8'));
 const title = (value) => value[0].toUpperCase() + value.slice(1);
 const pct = (metric) => (metric.total === 0 ? '--' : `${metric.pct}%`);
-const bar = (metric) => {
-  if (metric.total === 0) return '';
-  const filled = Math.round(metric.pct / 10);
-  return `${'■'.repeat(filled)}${'□'.repeat(10 - filled)}`;
-};
+const bar = (metric) => (metric.total === 0 ? '' : '█'.repeat(Math.round(metric.pct / 10)));
 
 const { total, ...files } = summary;
 
