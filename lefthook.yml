@@ -19,3 +19,4 @@ pre-commit:
       run: |
         pnpm run deps:audit:high || echo 'WARNING: found high and/or critical severity vulnerabilities'
         pnpm run deps:dedupe:check || echo 'WARNING: found duplicate dependencies'
+        pnpm run deps:peers || echo 'WARNING: found unmet peer dependencies'

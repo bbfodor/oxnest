@@ -20,6 +20,7 @@
     "deps:dedupe": "pnpm dedupe",
     "deps:dedupe:check": "pnpm dedupe --check",
     "deps:outdated": "pnpm outdated",
+    "deps:peers": "pnpm peers check",
     "deps:prune": "pnpm prune",
     "test": "vitest run --project unit",
     "test:watch": "vitest --project unit",
