@@ -1,6 +1,6 @@
 {
   "name": "oxnest",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "A lightweight NestJS starter template powered by the Oxidation Compiler.",
   "license": "MIT",
   "scripts": {
@@ -29,9 +29,9 @@
     "test:e2e": "vitest run --project e2e"
   },
   "dependencies": {
-    "@nestjs/common": "^11.2.2",
-    "@nestjs/core": "^11.2.2",
-    "@nestjs/platform-express": "^11.2.2",
+    "@nestjs/common": "^11.2.3",
+    "@nestjs/core": "^11.2.3",
+    "@nestjs/platform-express": "^11.2.3",
     "reflect-metadata": "^0.2.2",
     "rxjs": "^7.8.2"
   },

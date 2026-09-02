@@ -22,7 +22,7 @@ This also installs a [lefthook](https://lefthook.dev/) pre-commit hook ([`leftho
 Run these sanity checks:
 
 ```bash
-pnpm run lint
+pnpm run lint:typecheck
 pnpm run fmt:check
 pnpm run build
 pnpm run test

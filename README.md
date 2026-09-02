@@ -5,30 +5,37 @@
 [![Powered by Oxc](https://img.shields.io/badge/powered%20by-Oxc-7c3aed)](https://oxc.rs/)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
-A lightweight [NestJS](https://nestjs.com/) starter template powered by the [Oxidation Compiler](https://oxc.rs/). It features a modern, high-performance toolchain built around Rust. Everything comes preconfigured out of the box, so you can start building right away.
+A lightweight [NestJS](https://nestjs.com/) starter template powered by the [Oxidation Compiler](https://oxc.rs/). It features a modern, high performance toolchain built around Rust. Everything comes preconfigured so you can start building right away.
 
 ## Why?
 
-The Nest CLI produces new projects with a slow and outdated toolchain by default. **Oxnest** swaps that chain for state-of-the-art tooling based on Rust:
+The Nest CLI produces new projects with a slow and outdated toolchain by default. **Oxnest** swaps that chain for state of the art tooling based on Rust:
 
 |            | Default Nest starter | Oxnest                               |
 | ---------- | -------------------- | ------------------------------------ |
 | Linting    | ESLint + plugins     | oxlint                               |
+| Type check | tsc                  | oxlint (tsgolint)                    |
+| Transform  | tsc                  | Oxc / [SWC](https://swc.rs/)         |
 | Formatting | Prettier             | oxfmt                                |
 | Testing    | Jest                 | [Vitest](https://vitest.dev/) (+Oxc) |
-| Transform  | tsc                  | Oxc / [SWC](https://swc.rs/)         |
-
-**The result:** near-instant lint & format feedback with dramatically quicker test runs, all driven by a fast current-generation compiler core. It is absolutely plug-and-play with zero setup on your part.
 
 > [!NOTE]
 > This template is in early development and uses SWC in the build pipeline for now, as the Nest CLI does not provide a native Oxc builder currently.
+
+## Features
+
+- **Automation** - [Lefthook](https://lefthook.dev/) pre-commit hooks and GitHub Actions
+- **Vitest** - Unit and e2e test separation, V8 engine
+- **Dependency hygiene** - Audit and dedupe checks, Dependabot/pnpm minimum release age
+- **Stricter lint** - Suspicious and pedantic categories as errors
+- **Configuration** - Path aliases, format on save
 
 ## Prerequisites
 
 - [Node](https://nodejs.org/) -- Use version from the [.node-version](.node-version) file (or [.nvmrc](.nvmrc) for nvm)
 - [pnpm](https://pnpm.io/) -- Use version from the `packageManager` property in [package.json](package.json)
 
-Use the [Oxc](https://marketplace.cursorapi.com/items/?itemName=oxc.oxc-vscode) extension in VS Code (or forks) to enable linting and format-on-save in your IDE (can be customized in [settings.json](.vscode/settings.json)). You may need to point the extension to your Node binary when using a version manager (eg. fnm, nvm) like so:
+Use the [Oxc](https://marketplace.cursorapi.com/items/?itemName=oxc.oxc-vscode) extension in VS Code (or forks) to enable linting and format on save in your IDE (can be customized in [settings.json](.vscode/settings.json)). The extension reports lint rules as well, while type errors come from the TypeScript language server. You may need to point the extension to your Node binary when using a version manager (eg. fnm, nvm) like so:
 
 ```jsonc
 // User Settings JSON
@@ -48,13 +55,14 @@ The app listens on port `3000` by default (override via the `PORT` env variable)
 
 ## Main scripts
 
-| Script     | Description           |
-| ---------- | --------------------- |
-| `start`    | Start the Nest server |
-| `test`     | Run all unit tests    |
-| `test:e2e` | Run all E2E tests     |
-| `lint`     | Lint the codebase     |
-| `fmt`      | Format the codebase   |
+| Script           | Description                         |
+| ---------------- | ----------------------------------- |
+| `start`          | Start the Nest server               |
+| `test`           | Run all unit tests                  |
+| `test:e2e`       | Run all E2E tests                   |
+| `lint`           | Lint the codebase                   |
+| `lint:typecheck` | Lint the codebase and type check it |
+| `fmt`            | Format the codebase                 |
 
 ## Project layout
 
@@ -82,7 +90,7 @@ Clone this repo or use GitHub's **Use this template** feature as a starting poin
 
 ## Dependabot & dependency updates
 
-Routine dependency updates are batched with a **7-day delay**, so newly published versions have time to surface issues before they land here. See [CONTRIBUTING.md - Dependency updates](CONTRIBUTING.md#dependency-updates) for how this works with pnpm.
+Routine dependency updates are batched with a **7 day delay**, so newly published versions have time to surface issues before they land here. See [CONTRIBUTING.md - Dependency updates](CONTRIBUTING.md#dependency-updates) for how this works with pnpm.
 
 ## Contributing
 
