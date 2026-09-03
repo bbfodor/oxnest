@@ -39,7 +39,7 @@ pnpm run fmt
 
 Define import aliases in [`tsconfig.json`](tsconfig.json) `compilerOptions.paths` only.
 
-The SWC config file (`.swcrc`) is generated from that config. Do not edit or commit it. The `prepare` lifecycle hook runs [`scripts/gen-swcrc.mjs`](scripts/gen-swcrc.mjs) on install to write this file. To change this config, edit `tsconfig.json` or the generator script, then run the `prepare` package script to regenerate `.swcrc`.
+The SWC config file (`.swcrc`) is generated from that config. Do not edit or commit it. The `prepare` lifecycle hook runs [`scripts/gen-swcrc.mts`](scripts/gen-swcrc.mts) on install to write this file. To change this config, edit `tsconfig.json` or the generator script, then run the `prepare` package script to regenerate `.swcrc`.
 
 ## Tests
 

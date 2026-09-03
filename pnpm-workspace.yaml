@@ -9,6 +9,8 @@ allowBuilds:
 # if lockfile out of sync
 verifyDepsBeforeRun: error
 
+engineStrict: true
+
 # 7 days in minutes (7 × 24 × 60)
 minimumReleaseAge: 10080
 minimumReleaseAgeStrict: false

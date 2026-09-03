@@ -1,24 +1,36 @@
 import { readFileSync, writeFileSync } from 'node:fs';
-import { dirname, join, relative } from 'node:path';
-import { fileURLToPath } from 'node:url';
+import { join, relative } from 'node:path';
 
-const root = join(dirname(fileURLToPath(import.meta.url)), '..');
-const rel = (path) => relative(root, path).replace(/\\/g, '/');
+interface Tsconfig {
+  compilerOptions?: {
+    paths?: Record<string, string[]>;
+    target?: string;
+  };
+}
 
-const scriptRel = rel(fileURLToPath(import.meta.url));
+const isTsconfig = (value: unknown): value is Tsconfig =>
+  typeof value === 'object' && value !== null;
+
+const root = join(import.meta.dirname, '..');
+const rel = (path: string) => relative(root, path).replaceAll('\\', '/');
+
+const scriptRel = rel(import.meta.filename);
 const tsconfigPath = join(root, 'tsconfig.json');
 const tsconfigRel = rel(tsconfigPath);
 const swcrcPath = join(root, '.swcrc');
 const swcrcRel = rel(swcrcPath);
 
-const tsconfig = JSON.parse(readFileSync(tsconfigPath, 'utf8'));
-const paths = tsconfig.compilerOptions?.paths ?? {};
-const target = tsconfig.compilerOptions?.target?.toLowerCase();
+const parsed: unknown = JSON.parse(readFileSync(tsconfigPath, 'utf8'));
+
+if (!isTsconfig(parsed)) throw new Error(`Unexpected ${tsconfigRel} shape.`);
+
+const paths = parsed.compilerOptions?.paths ?? {};
+const target = parsed.compilerOptions?.target?.toLowerCase();
 
 const swcPaths = Object.fromEntries(
   Object.entries(paths).map(([key, targets]) => [
     key,
-    targets.map((entry) => entry.replace(/^\.\//, '')),
+    targets.map((entry) => entry.replace(/^\.\//u, '')),
   ]),
 );
 

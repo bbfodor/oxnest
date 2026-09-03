@@ -24,5 +24,6 @@
     "forceConsistentCasingInFileNames": true,
     "noFallthroughCasesInSwitch": true
   },
+  "include": ["**/*", ".github/scripts/**/*"],
   "exclude": ["test"]
 }
