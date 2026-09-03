@@ -3,7 +3,7 @@ import { readFileSync, writeFileSync } from 'node:fs';
 const HEADING = '## Vitest Test Report';
 
 const title = process.argv[2];
-const path = process.env.GITHUB_STEP_SUMMARY;
+const path = process.env.GITHUB_STEP_SUMMARY ?? '';
 
 if (!title || !path) process.exit(0);
 

@@ -62,11 +62,11 @@ jobs:
       - name: Test (unit)
         run: |
           pnpm run test:cov || code=$?
-          node scripts/rename-test-report.mjs 'Unit tests'
+          node .github/scripts/rename-test-report.mts 'Unit tests'
           exit "${code:-0}"
 
       - name: Coverage summary
-        run: node scripts/coverage-summary.mjs
+        run: node .github/scripts/coverage-summary.mts
 
       - name: Upload coverage
         uses: actions/upload-artifact@v7.0.1
@@ -79,5 +79,5 @@ jobs:
       - name: Test (e2e)
         run: |
           pnpm run test:e2e || code=$?
-          node scripts/rename-test-report.mjs 'E2E tests'
+          node .github/scripts/rename-test-report.mts 'E2E tests'
           exit "${code:-0}"

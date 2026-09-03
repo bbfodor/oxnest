@@ -2,10 +2,10 @@
 
 [![CI](https://github.com/bbfodor/oxnest/actions/workflows/ci.yml/badge.svg)](https://github.com/bbfodor/oxnest/actions/workflows/ci.yml)
 [![status: experimental](https://img.shields.io/badge/status-experimental-orange)](#oxnest)
-[![Powered by Oxc](https://img.shields.io/badge/powered%20by-Oxc-7c3aed)](https://oxc.rs/)
+[![Powered by Rust](https://img.shields.io/badge/powered%20by-Rust-CE422B?logo=rust&logoColor=white)](https://www.rust-lang.org/)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
-A lightweight [NestJS](https://nestjs.com/) starter template powered by the [Oxidation Compiler](https://oxc.rs/). It features a modern, high performance toolchain built around Rust. Everything comes preconfigured so you can start building right away.
+A lightweight [NestJS](https://nestjs.com/) starter template powered by Rust and the [Oxidation Compiler](https://oxc.rs/). It comes preconfigured with a modern, high performance toolchain so you can start building right away.
 
 ## Why?
 
@@ -24,7 +24,7 @@ The Nest CLI produces new projects with a slow and outdated toolchain by default
 
 ## Features
 
-- **Automation** - [Lefthook](https://lefthook.dev/) pre-commit hooks and GitHub Actions
+- **Automation** - [Lefthook](https://lefthook.dev/) pre-commit hook and GitHub Actions
 - **Vitest** - Unit and e2e test separation, V8 engine
 - **Dependency hygiene** - Audit and dedupe checks, Dependabot/pnpm minimum release age
 - **Stricter lint** - Suspicious and pedantic categories as errors

@@ -1,10 +1,10 @@
 {
   "name": "oxnest",
   "version": "0.3.1",
-  "description": "A lightweight NestJS starter template powered by the Oxidation Compiler.",
+  "description": "A lightweight NestJS starter template powered by Rust and the Oxidation Compiler.",
   "license": "MIT",
   "scripts": {
-    "prepare": "node scripts/gen-swcrc.mjs",
+    "prepare": "node scripts/gen-swcrc.mts",
     "build": "nest build",
     "fmt": "oxfmt",
     "fmt:check": "oxfmt --check",
@@ -12,8 +12,8 @@
     "start:dev": "nest start --watch",
     "start:debug": "nest start --debug --watch",
     "start:prod": "node dist/main",
-    "lint": "oxlint src test",
-    "lint:typecheck": "oxlint --type-check src test",
+    "lint": "oxlint",
+    "lint:typecheck": "oxlint --type-check",
     "deps:audit": "pnpm audit",
     "deps:audit:high": "pnpm audit --audit-level high --ignore-registry-errors",
     "deps:audit:fix": "pnpm audit --fix update",
@@ -55,6 +55,9 @@
     "ts-node": "^10.9.2",
     "typescript": "^6.0.3",
     "vitest": "^4.1.11"
+  },
+  "engines": {
+    "node": ">=22.18.0"
   },
   "packageManager": "pnpm@11.2.2"
 }
