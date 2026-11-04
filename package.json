@@ -36,25 +36,25 @@
     "rxjs": "^7.8.2"
   },
   "devDependencies": {
-    "@nestjs/cli": "^11.0.24",
-    "@nestjs/schematics": "^11.1.0",
-    "@nestjs/testing": "^11.2.3",
+    "@nestjs/cli": "^12.0.10",
+    "@nestjs/schematics": "^12.0.10",
+    "@nestjs/testing": "^12.2.0",
     "@swc/cli": "^0.8.1",
-    "@swc/core": "^1.16.1",
+    "@swc/core": "^1.16.20",
     "@types/express": "^5.0.6",
-    "@types/node": "^24.13.3",
+    "@types/node": "^24.19.2",
     "@types/supertest": "^7.2.1",
-    "@vitest/coverage-v8": "^4.1.11",
-    "lefthook": "^2.1.10",
-    "oxfmt": "^0.65.0",
-    "oxlint": "^1.80.0",
-    "oxlint-tsgolint": "^7.0.2001",
+    "@vitest/coverage-v8": "^5.0.5",
+    "lefthook": "^2.2.2",
+    "oxfmt": "^0.74.0",
+    "oxlint": "^1.89.0",
+    "oxlint-tsgolint": "^7.0.2005",
     "source-map-support": "^0.5.21",
-    "supertest": "^7.2.2",
+    "supertest": "^7.3.1",
     "ts-loader": "^9.6.2",
     "ts-node": "^10.9.2",
     "typescript": "^6.0.3",
-    "vitest": "^4.1.11"
+    "vitest": "^5.0.5"
   },
   "engines": {
     "node": ">=22.18.0"
